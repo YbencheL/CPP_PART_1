@@ -1,13 +1,15 @@
 #include <iostream>
 #include "Weapon.hpp"
 
-class HumanB
+class HumanA
 {
     private : 
+
         std::string name;
-        Weapon* weapon;
+        Weapon&     weapon;
+
     public :
-        HumanB(std::string caller);
-        void setWeapon(Weapon& s);
+
+        HumanA(std::string call, Weapon& weapon);
         void attack();
 };

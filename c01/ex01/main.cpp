@@ -9,7 +9,9 @@ int main() {
         Z1->announce();
     }
     delete[] Z1;
+
     std::cout << "------------------" << std::endl;
+
     Zombie* Z2 = z.zombieHorde(10, "Zimbaza");
     for (int i = 0; i < 10; i++)
     {

@@ -1,13 +1,13 @@
 #include "Zombie.hpp"
 
-void Zombie::set_name(std::string& name)
+Zombie::Zombie(std::string n) : name(n)
 {
-    this->name = name;
+
 }
 
 Zombie::~Zombie()
 {
-    std::cout << "All Zombies are now destroyed" << std::endl;
+    std::cout << name << " is now destroyed" << std::endl;
 }
 
 void Zombie::announce()

@@ -1,7 +1,7 @@
 #include "Zombie.hpp"
 
 int main() {
-    Zombie z;
+    Zombie z("HeapZombie");
 
     Zombie* z1 = z.newZombie("HeapZombie");
     z1->announce();
@@ -17,7 +17,7 @@ int main() {
     Zombie* z3 = z.newZombie("ZombieB");
     z2->announce();
     z3->announce();
-    z.randomChump("Zombie C");
+    z.randomChump("ZombieC");
     delete z2;
     delete z3;
 
