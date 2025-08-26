@@ -10,18 +10,13 @@ void    Contact::add_conts_val()
     std::cin >> nickname;
     std::cout << "Phone number : ";
     std::cin >> phone_number;
-    for(size_t i = 0; i < phone_number.size(); i++)
-    {
-        if (!std::isdigit(phone_number[i]))
-        {
-            std::cout << "Phone number must contain only digits!!!" << std::endl;
-            std::cout << "Phone number : ";
-            std::cin >> phone_number;
-            i = -1;
-        }
-    }
+    if (std::cin.eof())
+        exit(0);
     std::cout << "Dark secret : ";
     std::cin >> dark_secret;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    if (std::cin.eof())
+        exit(0);
 }
 
 void Contact::column_formating(std::string text)

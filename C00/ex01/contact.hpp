@@ -1,13 +1,17 @@
 #include <iostream>
 
-class Contact{
+class Contact
+{
     private:
+
         std::string first_name;
         std::string last_name;
         std::string nickname;
         std::string phone_number;
         std::string dark_secret;
+
     public:
+    
         std::string get_firstname();
         std::string get_last_name();
         std::string get_nickname();
