@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 
 int main(int ac, char *av[])
 {
@@ -7,8 +6,9 @@ int main(int ac, char *av[])
     {
         for(int i = 1; i < ac ; i++)
         {
-            std::string s = (std::string)av[i];
-            std::transform(s.begin(), s.end(), s.begin(), toupper);
+            std::string s = av[i];
+            for (int j = 0; j < (int)s.size(); j++)
+                s[j] = std::toupper(s[j]);
             std::cout << s;
         }
     }

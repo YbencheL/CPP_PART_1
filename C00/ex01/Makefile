@@ -1,7 +1,7 @@
 CPP = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC =	phonebook.cpp contact.cpp main.cpp
+SRC =	PhoneBook.cpp Contact.cpp isprintable.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

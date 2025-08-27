@@ -1,4 +1,5 @@
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
+#include "isprintable.hpp"
 
 PhoneBook::PhoneBook()
 {
@@ -8,18 +9,21 @@ PhoneBook::PhoneBook()
 int    PhoneBook::functionality()
 {
     std::string command;
-    Contact    c;
+    Contact     c;
     int         s_index;
     
     s_index = 0;
     std::cout << "Enter a command [YOU CAN CHOOSE BETWEEN ADD SEARCH or EXIT] : ";
-    std::cin >> command;
-    if(std::cin.eof())
-        exit(0);
+    command = isPrintableString();
     if (command == "ADD")
         add_conts();
     else if (command == "SEARCH")
     {
+        if (contacts_count == 0)
+        {
+            std::cout << "YOU MUST ADD A CONTACT FIRST!!!" << std::endl;
+            return 0;
+        }
         c.column_formating("Index");
         std::cout << " | ";
         c.column_formating("First name");
@@ -77,19 +81,10 @@ void    PhoneBook::search(int s_index)
     while(true)
     {
         std::cout << "Enter an index to search for : ";
-        std::cin >> s_index;
-        if(std::cin.eof())
-            exit(0);
-        if (std::cin.fail() || std::cin.peek() != '\n')
-        {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "index is not a number" << std::endl;
-            continue;
-        }
+        s_index = isPrintableInt();
         if (s_index < 0 || s_index >= contacts_count)
         {
-            std::cout << "index doesn't exist or out of range{0..7}" << std::endl;
+            std::cout << "index doesn't exist, is empty or out of range {0..7}" << std::endl;
             continue;
         }
         display(s_index);

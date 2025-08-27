@@ -1,4 +1,8 @@
+#ifndef CONTACT_H
+#define CONTACT_H
+
 #include <iostream>
+#include <iomanip>
 
 class Contact
 {
@@ -17,6 +21,8 @@ class Contact
         std::string get_nickname();
         std::string get_phone_number();
         std::string get_dark_secret();
-        void column_formating(std::string text);
-        void add_conts_val();
+        void        column_formating(std::string text);
+        void        add_conts_val();
 };
+
+#endif

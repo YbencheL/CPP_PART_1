@@ -1,22 +1,18 @@
-#include "phonebook.hpp"
+#include "Contact.hpp"
+#include "isprintable.hpp"
 
 void    Contact::add_conts_val()
 {
     std::cout << "First name : ";
-    std::cin >> first_name;
+    first_name = isPrintableString();
     std::cout << "Last name : ";
-    std::cin >> last_name;
+    last_name = isPrintableString();
     std::cout << "Nickname : ";
-    std::cin >> nickname;
+    nickname = isPrintableString();
     std::cout << "Phone number : ";
-    std::cin >> phone_number;
-    if (std::cin.eof())
-        exit(0);
+    phone_number = isPrintableString();
     std::cout << "Dark secret : ";
-    std::cin >> dark_secret;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    if (std::cin.eof())
-        exit(0);
+    dark_secret = isPrintableString();
 }
 
 void Contact::column_formating(std::string text)

@@ -1,15 +1,17 @@
-#include <algorithm>
+#ifndef PHONEBOOK_H
+#define PHONEBOOK_H
+
 #include <iostream>
 #include <iomanip>
-#include <limits>
+#include <cctype>
 #include <cstdlib>
-#include "contact.hpp"
+#include "Contact.hpp"
 
 class PhoneBook
 {
     private:
 
-        Contact contacts[8]; 
+        Contact contacts[8];
         int     contacts_count;
 
     public:
@@ -21,3 +23,5 @@ class PhoneBook
         void    display(int s_index);
         void    show_all_contacts(int s_index);
 };
+
+#endif
