@@ -22,13 +22,17 @@ void Harl::error( void )
 
 void Harl::complain( std::string level )
 {
-    Harl harl;
     std::string arr1[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    void (Harl::*arr2[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::debug};
+    void (Harl::*arr2[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     int i;
 
     i = 0;
-    while(arr1[i] != level)
+    while(arr1[i] != level && i < 4)
         i++;
-    (harl.*arr2[i])();
+    if (level != "DEBUG" && level != "INFO" && level != "WARNING" && level != "ERROR")
+    {
+        std::cout << "ERROR: Invalid level" << std::endl;
+        return ;
+    }
+    (this->*arr2[i])();
 }

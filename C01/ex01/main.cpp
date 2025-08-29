@@ -1,21 +1,20 @@
 #include "Zombie.hpp"
 
 int main() {
-    Zombie z;
 
-    Zombie* Z1 = z.zombieHorde(10, "Zombozo");
+    Zombie* Z1 = zombieHorde(10, "Zombozo");
     for (int i = 0; i < 10; i++)
     {
-        Z1->announce();
+        Z1[i].announce();
     }
     delete[] Z1;
 
     std::cout << "------------------" << std::endl;
 
-    Zombie* Z2 = z.zombieHorde(10, "Zimbaza");
+    Zombie* Z2 = zombieHorde(10, "Zimbaza");
     for (int i = 0; i < 10; i++)
     {
-        Z2->announce();
+        Z2[i].announce();
     }
     delete[] Z2;
     return 0;

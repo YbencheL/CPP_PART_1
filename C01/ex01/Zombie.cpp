@@ -5,18 +5,17 @@ Zombie::Zombie()
 
 }
 
-void Zombie::set_name(std::string& name)
+Zombie::Zombie(std::string name) : name(name)
 {
-    this->name = name;
+
 }
 
 Zombie::~Zombie()
 {
-    std::cout << "All Zombies are now destroyed" << std::endl;
+    std::cout << name << " is now destroyed" << std::endl;
 }
 
 void Zombie::announce()
 {
-    std::cout << name;
-    std::cout << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

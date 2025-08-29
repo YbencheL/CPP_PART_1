@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "Weapon.hpp"
 
 class HumanB
@@ -7,6 +8,7 @@ class HumanB
 
         std::string name;
         Weapon*     weapon;
+
     public :
 
         HumanB(std::string caller);

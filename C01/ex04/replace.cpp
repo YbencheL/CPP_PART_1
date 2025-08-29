@@ -19,7 +19,7 @@ int replace(std::string s1, std::string s2, char* file_name)
     std::ofstream outfile(filename.c_str());
     if (!outfile)
     {
-        std::cerr << "ERROR CLOSING FILE" << std::endl;
+        std::cerr << "ERROR OPENING OUTPUT FILE" << std::endl;
         return 1;
     }
     while (std::getline(infile, line))

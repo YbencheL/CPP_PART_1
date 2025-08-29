@@ -1,25 +1,25 @@
 #include "Zombie.hpp"
 
 int main() {
-    Zombie z("HeapZombie");
 
-    Zombie* z1 = z.newZombie("HeapZombie");
+    Zombie* z1 = newZombie("HeapZombie");
     z1->announce();
     delete z1;
 
-    std::cout << "----\n";
+    std::cout << "----------------\n";
 
-    z.randomChump("StackZombie");
+    randomChump("StackZombie");
 
-    std::cout << "----\n";
+    std::cout << "----------------\n";
 
-    Zombie* z2 = z.newZombie("ZombieA");
-    Zombie* z3 = z.newZombie("ZombieB");
+    Zombie* z2 = newZombie("ZombieA");
+    Zombie* z3 = newZombie("ZombieB");
     z2->announce();
     z3->announce();
-    z.randomChump("ZombieC");
+    randomChump("ZombieC");
     delete z2;
     delete z3;
 
     return 0;
+
 }
