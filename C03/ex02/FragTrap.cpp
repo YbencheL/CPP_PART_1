@@ -1,6 +1,6 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap()
+FragTrap::FragTrap() : ClapTrap()
 {
     hit_points = 100;
     energy_points = 100;
